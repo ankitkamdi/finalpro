@@ -132,34 +132,63 @@
                     <meta charset="UTF-8">
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
                     <title>Contact Form</title>
-                </head>
-                <body>
                 
-                    <form action="submitForm.php" method="post" class="signin-form">
-                        <div class="row align-form-map">
-                            <div class="col-sm-6 form-input">
-                                <input type="text" name="w3lName" id="w3lName" placeholder="Name" />
+                  
+                    
+    
+                            
+                     </style>
+                        </head>
+                        <body>
+                            <div class="content">
+                                
+                                <form method="post" action="" name="product" id="product">
+                                   
+                                    
+                                    
+                                    <label for="naem">Name</label>
+                                    <input class="fil" type="text" name="name" placeholder="Enter your Name" required>
+                        
+                                    <label for="naem">Rate</label>
+                                    <input class="fil" type="text" name="price" placeholder="Enter Free Or Paid" required>
+                        
+                                    <label for="naem">Food type</label>
+                                    <input class="fil" type="text" name="food Type" placeholder=" Veg/Non Veg" required>
+                        
+                                    <label for="naem">Product code</label>
+                                    <input class="fil" type="text" name="Product code" placeholder="Product code">
+                        
+                                    <label for="naem">Email</label>
+                                    <input class="fil" type="text" name="email" placeholder="Enter your Email Id" required>
+                        
+                                    <label for=""> Description</label>
+                                    <textarea name="description" id="" cols="30" rows="10" placeholder="tell about your Recipe in Breif" required></textarea>
+                        
+                                    <button class="click">Submit &#10132;</button>
+                                    
+                                 
+                        
+                                </form>
+                              
+                              
                             </div>
-                            <div class="col-sm-6 form-input">
-                                <input type="email" name="w3lSender" id="w3lSender" placeholder="Email" required="" />
-                            </div>
-                            <div class="col-sm-6 form-input">
-                                <input type="text" name="w3lSubject" placeholder="Subject" class="contact-input">
-                            </div>
-                            <div class="col-sm-6 form-input">
-                                <input type="number" name="w3lPhone" placeholder="Phone Number" class="contact-input">
-                            </div>
-                        </div>
-                        <div class="form-input">
-                            <textarea placeholder="Message" name="w3lMessage" id="w3lMessage" required=""></textarea>
-                        </div>
-                        <div class="submit text-right">
-                            <button type="submit" class="btn btn-style">Submit Message</button>
-                        </div>
-                    </form>
-                
-                </body>
-                </html>
+                            <script>
+                                const scriptURL = 'https://script.google.com/macros/s/AKfycbwk6kTKS6oy4XfVr59lTQDpdUnEam6ALrf0fVGVqZxKoj2QwHnzq56ZIv_LFYjcEr0m/exec'
+                                const form = document.forms['product']
+                              
+                                form.addEventListener('submit', e => {
+                                  e.preventDefault()
+                                  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                                    .then(response => alert("Thank you! your form is submitted successfully." ))
+                                    .then(() => {  window.location.reload(); })
+                                    .catch(error => console.error('Error!', error.message))
+                                })
+                              </script>
+                            <br>
+                        </body>
+                        </html>
+                    </div>
+                    
                 
  <!-- Horizontal map -->
 <div class="map-iframe mt-5 pt-md-4" style="max-width: 100%;">
